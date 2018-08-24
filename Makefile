@@ -3,6 +3,7 @@ DEVICE=2c001c000d51353432393339
 all: firmware
 
 firmware:
+	rm -f *.bin
 	particle compile electron
 	cp *.bin firmwares/latest.bin
 	mv *.bin firmwares/
@@ -21,3 +22,9 @@ green:
 
 red:
 	particle call ${DEVICE} red
+
+black:
+	particle call ${DEVICE} black
+
+blue:
+	particle call ${DEVICE} blue
